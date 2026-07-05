@@ -182,6 +182,7 @@ sudo ruby pentbox.rb
 ### Step 1 — Honeypot Activated (Port 80)
 
 PentBox is configured and the HTTP honeypot goes live:
+
 <img width="697" height="91" alt="honeypot_activated_port80 jpg" src="https://github.com/user-attachments/assets/70c6519b-7448-45ec-b763-8c726c68140d" />
 
 ```
@@ -193,6 +194,7 @@ HONEYPOT ACTIVATED ON PORT 80 (2024-08-09 22:26:19 +0500)
 ### Step 2 — Attacker Connects via Browser
 
 Kali browser navigates to `http://192.168.20.129`:
+
 <img width="1280" height="668" alt="access_denied_browser jpg" src="https://github.com/user-attachments/assets/355dae46-8f01-4bf5-b7db-1f5e7d5f9c10" />
 
 ```
@@ -250,6 +252,13 @@ PentBox is reconfigured manually for Telnet (port 23):
 
 <img width="680" height="681" alt="manual_config_port23 jpg" src="https://github.com/user-attachments/assets/fc4b922b-b0d0-4380-b143-f16d5505850f" />
 
+
+
+Attacker connects via Telnet:
+
+
+<img width="652" height="662" alt="telnet_deception jpg" src="https://github.com/user-attachments/assets/89c34493-eed5-459a-bfc8-a1fd47a0bd6a" />
+
 ```
 Port: 23
 Deception message: "Don't try to hack me, Because i can see you!!!"
@@ -257,9 +266,7 @@ Save log: yes
 HONEYPOT ACTIVATED ON PORT 23 (2024-08-09 22:34:59 +0500)
 ```
 
-Attacker connects via Telnet:
-
-<img width="652" height="662" alt="telnet_deception jpg" src="https://github.com/user-attachments/assets/89c34493-eed5-459a-bfc8-a1fd47a0bd6a" />
+<img width="1217" height="397" alt="telnet_intrusion_log jpg" src="https://github.com/user-attachments/assets/3507cf60-6ef2-47c6-85e8-365f5a03ed8e" />
 
 ```bash
 telnet 192.168.20.129 23
@@ -270,7 +277,7 @@ telnet 192.168.20.129 23
 
 Both Telnet attempts are logged:
 
-<img width="1217" height="397" alt="telnet_intrusion_log jpg" src="https://github.com/user-attachments/assets/3507cf60-6ef2-47c6-85e8-365f5a03ed8e" />
+<img width="867" height="191" alt="Ubuntu logs two Telnet intrusion attempts from  128 with timestamps and raw Telnet negotiation bytes" src="https://github.com/user-attachments/assets/c7577ff7-f622-4066-91d0-f0bea95bea07" />
 
 ```
 INTRUSION ATTEMPT DETECTED! from 192.168.20.128:39982  (2024-08-09 22:35:15 +0500)
