@@ -1,0 +1,9 @@
+# Real-Time SSH Intrusion Detector
+# Final Year Project — University of Agriculture Peshawar (2024)
+# Authors: Afaq Ali & Yawar Hassan
+#
+# Install: pip install -r requirements.txt
+# Also required: sudo apt install tshark
+
+pyshark>=0.6
+scapy>=2.5.0
