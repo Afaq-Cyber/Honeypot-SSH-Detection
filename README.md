@@ -183,8 +183,6 @@ sudo ruby pentbox.rb
 
 PentBox is configured and the HTTP honeypot goes live:
 <img width="697" height="91" alt="honeypot_activated_port80 jpg" src="https://github.com/user-attachments/assets/70c6519b-7448-45ec-b763-8c726c68140d" />
-![Honeypot Activated](
-)
 
 ```
 HONEYPOT ACTIVATED ON PORT 80 (2024-08-09 22:26:19 +0500)
@@ -195,8 +193,7 @@ HONEYPOT ACTIVATED ON PORT 80 (2024-08-09 22:26:19 +0500)
 ### Step 2 — Attacker Connects via Browser
 
 Kali browser navigates to `http://192.168.20.129`:
-
-![Access Denied Browser](screenshots/access_denied_browser.jpg)
+<img width="1280" height="668" alt="access_denied_browser jpg" src="https://github.com/user-attachments/assets/355dae46-8f01-4bf5-b7db-1f5e7d5f9c10" />
 
 ```
 Access denied
@@ -212,7 +209,7 @@ IP Address login failed
 http 192.168.20.129
 ```
 
-![Access Denied CLI](screenshots/access_denied_cli.jpg)
+<img width="1280" height="506" alt="access_denied_cli jpg" src="https://github.com/user-attachments/assets/e7c38b72-a2d9-4404-8677-25f7394dff6f" />
 
 ```
 ConnectionError: ('Connection aborted.', BadStatusLine('<HEAD>\n'))
@@ -224,7 +221,7 @@ ConnectionError: ('Connection aborted.', BadStatusLine('<HEAD>\n'))
 
 The honeypot silently logged everything:
 
-![Intrusion Log HTTP](screenshots/intrusion_detected_http.jpg)
+<img width="973" height="597" alt="intrusion_detected_http jpg" src="https://github.com/user-attachments/assets/5c5fc15a-cd97-40a8-8828-824aa0bb375c" />
 
 ```
 INTRUSION ATTEMPT DETECTED! from 192.168.20.128:47920  (2024-08-09 22:26:43 +0500)
@@ -251,7 +248,7 @@ From a single browser visit, the honeypot extracted: attacker IP and port, opera
 
 PentBox is reconfigured manually for Telnet (port 23):
 
-![Manual Config](screenshots/manual_config_port23.jpg)
+<img width="680" height="681" alt="manual_config_port23 jpg" src="https://github.com/user-attachments/assets/fc4b922b-b0d0-4380-b143-f16d5505850f" />
 
 ```
 Port: 23
@@ -262,7 +259,7 @@ HONEYPOT ACTIVATED ON PORT 23 (2024-08-09 22:34:59 +0500)
 
 Attacker connects via Telnet:
 
-![Telnet Deception](screenshots/telnet_deception.jpg)
+<img width="652" height="662" alt="telnet_deception jpg" src="https://github.com/user-attachments/assets/89c34493-eed5-459a-bfc8-a1fd47a0bd6a" />
 
 ```bash
 telnet 192.168.20.129 23
@@ -273,7 +270,7 @@ telnet 192.168.20.129 23
 
 Both Telnet attempts are logged:
 
-![Telnet Log](screenshots/telnet_intrusion_log.jpg)
+<img width="1217" height="397" alt="telnet_intrusion_log jpg" src="https://github.com/user-attachments/assets/3507cf60-6ef2-47c6-85e8-365f5a03ed8e" />
 
 ```
 INTRUSION ATTEMPT DETECTED! from 192.168.20.128:39982  (2024-08-09 22:35:15 +0500)
@@ -288,7 +285,7 @@ Using the attacker IP from the honeypot logs, the victim machine scans back:
 
 **Top 1000 ports:**
 
-![Reverse Scan 1000](screenshots/reverse_scan_1000.jpg)
+<img width="1027" height="337" alt="reverse_scan_1000 jpg" src="https://github.com/user-attachments/assets/33f00487-2790-4a2e-8728-510f6dcfc527" />
 
 ```bash
 nmap 192.168.20.128
@@ -297,7 +294,7 @@ nmap 192.168.20.128
 
 **All 65,535 ports:**
 
-![Reverse Scan Full](screenshots/reverse_scan_full.jpg)
+<img width="1036" height="306" alt="reverse_scan_full jpg" src="https://github.com/user-attachments/assets/b259f31f-e883-4cf1-a320-92b100b87d16" />
 
 ```bash
 nmap -p- 192.168.20.128
@@ -308,7 +305,7 @@ Host is confirmed up. No services exposed — typical for an attacker machine.
 
 **Checking honeypot stealth:**
 
-![Port 80 Closed](screenshots/port80_closed_external.jpg)
+<img width="726" height="238" alt="port80_closed_external jpg" src="https://github.com/user-attachments/assets/758f7ab6-7a54-4f19-acd0-9aa89885a6bf" />
 
 ```bash
 nmap -p 80 192.168.20.129
@@ -323,11 +320,11 @@ Port 80 appears **closed** to an external Nmap scan even while the honeypot is a
 
 Full packet capture of the session (2036 packets, 2008 displayed):
 
-![Wireshark Full](screenshots/wireshark_full.jpg)
+<img width="1280" height="801" alt="wireshark_full jpg" src="https://github.com/user-attachments/assets/8ceea650-bcf5-428f-8ebe-ba747f95685c" />
 
 Filtered to `ip.addr == 192.168.20.129`:
 
-![Wireshark Filtered](screenshots/wireshark_filtered.jpg)
+<img width="1796" height="537" alt="wireshark_filtered jpg" src="https://github.com/user-attachments/assets/bbc0fe7e-5f5d-440c-a8cf-b2582089d410" />
 
 | Packet Type | Direction | Meaning |
 |---|---|---|
